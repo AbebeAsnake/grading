@@ -17,7 +17,7 @@ public class MainController {
         grade = keyBoard.nextLine();*/
         String letterGrade;
          grade = grade *2;
-        if(grade >=90){
+       /* if(grade >=90){
             letterGrade ="A";
         }
         else if(grade >=80){
@@ -31,11 +31,33 @@ public class MainController {
         }
         else {
            letterGrade = "F";
+        }*/
+
+        switch(grade/10)
+        {
+            case 10: letterGrade = "A";
+                     break;
+            case 9: letterGrade = "A";
+                    break;
+            case 8: letterGrade = "B";
+                    break;
+            case 7: letterGrade = "C";
+                    break;
+            case 6: letterGrade = "D";
+                break;
+            default:
+                letterGrade = "F";
         }
-        System.out.println("Your grade:");
+
 
         System.out.println("Your letter grade:" +letterGrade);
-
-        return  letterGrade;
-    }
+        String showGradeIn100Percent = "Your score " +grade +"%";
+        String showGrade = "Your Letter grade:" + letterGrade;
+        String exiting = "Do you want to continue?" + " "+" Y /N";
+        System.out.println(exiting);
+        if(exiting =="N"){
+            Runtime.getRuntime().exit(0);
+        }
+        return showGradeIn100Percent +"\n" + showGrade ;
+}
 }
