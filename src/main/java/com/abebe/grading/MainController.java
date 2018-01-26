@@ -46,18 +46,16 @@ public class MainController {
             case 6: letterGrade = "D";
                 break;
             default:
-                letterGrade = "F";
+                    letterGrade = "F";
         }
-
 
         System.out.println("Your letter grade:" +letterGrade);
         String showGradeIn100Percent = "Your score " +grade +"%";
         String showGrade = "Your Letter grade:" + letterGrade;
         String exiting = "Do you want to continue?" + " "+" Y /N";
-        System.out.println(exiting);
-        if(exiting =="N"){
-            Runtime.getRuntime().exit(0);
-        }
+        if(exiting.equalsIgnoreCase("N")){
+        keyboard.close();
+    }
         return showGradeIn100Percent +"\n" + showGrade ;
 }
 }
